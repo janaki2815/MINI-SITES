@@ -1,0 +1,129 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f7f5;
+    margin: 0;
+    padding: 40px 20px;
+    color: #222;
+}
+
+/* Main Heading */
+
+h1 {
+    text-align: center;
+    font-size: 42px;
+    margin: 0 0 10px;
+    font-weight: 700;
+}
+
+/* Description */
+
+body > p {
+    text-align: center;
+    font-size: 18px;
+    color: #555;
+    margin: 0 0 35px;
+}
+
+/* Apps Container */
+
+.apps {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* App Cards */
+
+.app-card {
+    width: 330px;
+    min-height: 190px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    padding: 25px;
+
+    background-color: white;
+    border-radius: 18px;
+
+    text-decoration: none;
+    color: #222;
+
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.08);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        background-color 0.25s ease;
+}
+
+/* Card Heading */
+
+.app-card h2 {
+    margin: 0 0 10px;
+    font-size: 23px;
+    text-align: center;
+}
+
+/* Card Description */
+
+.app-card p {
+    margin: 0;
+    font-size: 15px;
+    color: #666;
+    text-align: center;
+}
+
+/* Hover Effect */
+
+.app-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.14);
+    background-color: #fffafa;
+}
+
+/* Click Effect */
+
+.app-card:active {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.10);
+}
+
+/* Keyboard Focus */
+
+.app-card:focus-visible {
+    outline: 3px solid #555;
+    outline-offset: 4px;
+}
+
+/* Mobile */
+
+@media (max-width: 700px) {
+
+    body {
+        padding: 30px 15px;
+    }
+
+    h1 {
+        font-size: 36px;
+    }
+
+    .apps {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .app-card {
+        width: 100%;
+        max-width: 360px;
+    }
+}

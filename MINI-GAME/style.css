@@ -1,0 +1,229 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f7f5;
+    color: #222;
+}
+
+/* Main Layout */
+
+main {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Game Card */
+
+.game-container {
+    width: 540px;
+    max-width: 100%;
+    padding: 40px 35px;
+
+    background-color: #b8f28a;
+    border: 2px solid #222;
+    border-radius: 24px;
+
+    text-align: center;
+
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.game-container:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 35px rgba(0, 0, 0, 0.18);
+}
+
+/* Heading */
+
+.game-container h1 {
+    margin: 0 0 18px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 38px;
+    line-height: 1.2;
+}
+
+/* Description */
+
+.game-container > p:first-of-type {
+    margin: 0 0 30px;
+    font-size: 18px;
+}
+
+/* Guess Form */
+
+#form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 35px;
+}
+
+/* Number Input */
+
+#number {
+    width: 250px;
+    padding: 12px 15px;
+
+    font-size: 16px;
+
+    border: 2px solid #444;
+    border-radius: 25px;
+    background-color: white;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+#number:hover {
+    border-color: #222;
+}
+
+#number:focus {
+    outline: none;
+    border-color: #222;
+    box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.10);
+}
+
+/* Guess Button */
+
+#btn {
+    padding: 12px 22px;
+
+    font-size: 16px;
+    font-weight: 600;
+
+    border: 2px solid #999;
+    border-radius: 25px;
+
+    background-color: white;
+    color: #222;
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+#btn:hover {
+    background-color: #333;
+    color: white;
+    border-color: #333;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.15);
+}
+
+#btn:active {
+    transform: translateY(0);
+    box-shadow: none;
+}
+
+/* Message */
+
+#message {
+    min-height: 27px;
+    margin: 0 0 25px;
+
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 19px;
+}
+
+/* Attempts */
+
+#attempt {
+    margin: 0 0 35px;
+
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+/* Restart Button */
+
+#restart {
+    padding: 11px 25px;
+
+    font-size: 16px;
+    font-weight: 600;
+
+    border: 2px solid #999;
+    border-radius: 25px;
+
+    background-color: white;
+    color: #222;
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+#restart:hover {
+    background-color: #333;
+    color: white;
+    border-color: #333;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.15);
+}
+
+#restart:active {
+    transform: translateY(0);
+    box-shadow: none;
+}
+
+/* Keyboard Focus */
+
+#btn:focus-visible,
+#restart:focus-visible {
+    outline: 3px solid #555;
+    outline-offset: 3px;
+}
+
+/* Mobile */
+
+@media (max-width: 600px) {
+
+    main {
+        padding: 15px;
+    }
+
+    .game-container {
+        padding: 30px 20px;
+    }
+
+    .game-container h1 {
+        font-size: 31px;
+    }
+
+    #form {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    #number {
+        width: 100%;
+    }
+
+    #btn {
+        width: 100%;
+    }
+}
