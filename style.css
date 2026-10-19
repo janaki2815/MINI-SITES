@@ -2,128 +2,257 @@
     box-sizing: border-box;
 }
 
+:root {
+    color-scheme: light;
+    --page-bg: #f4f7f5;
+    --text: #222222;
+    --muted: #626262;
+    --card-bg: #ffffff;
+    --accent: #e71924;
+    --shadow: 0 8px 28px rgba(0, 0, 0, 0.07);
+    --shadow-hover: 0 16px 36px rgba(0, 0, 0, 0.13);
+}
+
+html {
+    min-height: 100%;
+    scroll-behavior: smooth;
+}
+
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f4f7f5;
+    min-height: 100vh;
     margin: 0;
-    padding: 40px 20px;
-    color: #222;
+    padding: 48px 24px 24px;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--page-bg);
+    color: var(--text);
 }
 
-/* Main Heading */
-
-h1 {
+.page-header {
     text-align: center;
-    font-size: 42px;
-    margin: 0 0 10px;
-    font-weight: 700;
+    margin: 0 auto 42px;
 }
 
-/* Description */
-
-body > p {
-    text-align: center;
-    font-size: 18px;
-    color: #555;
-    margin: 0 0 35px;
+.page-header h1 {
+    margin: 0 0 12px;
+    font-size: clamp(34px, 5vw, 58px);
+    line-height: 1.1;
+    font-weight: 750;
+    letter-spacing: -1.5px;
 }
 
-/* Apps Container */
+.page-header > p {
+    margin: 0;
+    font-size: clamp(16px, 2vw, 22px);
+    line-height: 1.5;
+    color: var(--muted);
+}
 
 .apps {
-    display: flex;
-    justify-content: center;
-    gap: 25px;
-    flex-wrap: wrap;
-    max-width: 900px;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+    width: 100%;
+    max-width: 1000px;
     margin: 0 auto;
 }
 
-/* App Cards */
-
 .app-card {
-    width: 330px;
-    min-height: 190px;
-
+    position: relative;
     display: flex;
+    min-width: 0;
+    min-height: 225px;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
-    padding: 25px;
-
-    background-color: white;
-    border-radius: 18px;
-
+    padding: 32px 24px;
+    overflow-wrap: anywhere;
+    text-align: center;
+    color: var(--text);
+    background-color: var(--card-bg);
+    border: 1px solid rgba(0, 0, 0, 0.025);
+    border-radius: 25px;
+    box-shadow: var(--shadow);
     text-decoration: none;
-    color: #222;
-
-    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.08);
-
     transition:
-        transform 0.25s ease,
-        box-shadow 0.25s ease,
-        background-color 0.25s ease;
+        transform 220ms ease,
+        box-shadow 220ms ease,
+        border-color 220ms ease,
+        background-color 220ms ease;
+    -webkit-tap-highlight-color: transparent;
 }
-
-/* Card Heading */
 
 .app-card h2 {
-    margin: 0 0 10px;
-    font-size: 23px;
-    text-align: center;
+    margin: 0 0 14px;
+    font-size: clamp(19px, 2.1vw, 28px);
+    line-height: 1.35;
+    font-weight: 700;
 }
 
-/* Card Description */
-
-.app-card p {
+.app-card > p {
     margin: 0;
-    font-size: 15px;
-    color: #666;
-    text-align: center;
+    color: var(--muted);
+    font-size: 17px;
+    line-height: 1.6;
 }
 
-/* Hover Effect */
+.card-action {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 22px;
+    padding: 9px 14px;
+    border: 1px solid #e4e4e4;
+    border-radius: 999px;
+    color: #383838;
+    background: #fafafa;
+    font-size: 13px;
+    font-weight: 650;
+    transition:
+        background-color 220ms ease,
+        color 220ms ease,
+        border-color 220ms ease;
+}
+
+.card-action span {
+    font-size: 16px;
+}
 
 .app-card:hover {
-    transform: translateY(-7px);
-    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.14);
-    background-color: #fffafa;
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-hover);
+    border-color: rgba(0, 0, 0, 0.09);
 }
 
-/* Click Effect */
+.app-card:hover .card-action {
+    background-color: #222;
+    border-color: #222;
+    color: #fff;
+}
 
 .app-card:active {
     transform: translateY(-2px);
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.10);
 }
-
-/* Keyboard Focus */
 
 .app-card:focus-visible {
     outline: 3px solid #555;
-    outline-offset: 4px;
+    outline-offset: 5px;
+}
+
+/* JAX portfolio branding */
+
+.portfolio-card {
+    background: #fffafa;
+    border-color: rgba(231, 25, 36, 0.12);
+}
+
+.portfolio-card:hover {
+    border-color: rgba(231, 25, 36, 0.45);
+}
+
+.jax-mark {
+    display: inline-block;
+    font-weight: 900;
+    letter-spacing: -1.5px;
+    white-space: nowrap;
+}
+
+.jax-star {
+    color: var(--accent);
+    margin-left: 2px;
+}
+
+/* Footer */
+
+.page-footer {
+    margin: 38px auto 0;
+    text-align: center;
+    color: #777;
+    font-size: 13px;
+}
+
+.page-footer p {
+    margin: 0;
+}
+
+/* Tablet */
+
+@media (max-width: 700px) {
+    body {
+        padding: 36px 20px 24px;
+    }
+
+    .page-header {
+        margin-bottom: 30px;
+    }
+
+    .apps {
+        gap: 18px;
+    }
+
+    .app-card {
+        min-height: 205px;
+        padding: 26px 18px;
+        border-radius: 21px;
+    }
+
+    .app-card > p {
+        font-size: 15px;
+    }
 }
 
 /* Mobile */
 
-@media (max-width: 700px) {
-
+@media (max-width: 520px) {
     body {
-        padding: 30px 15px;
+        padding: 30px 16px 22px;
     }
 
-    h1 {
-        font-size: 36px;
+    .page-header h1 {
+        letter-spacing: -0.8px;
     }
 
     .apps {
-        flex-direction: column;
-        align-items: center;
+        grid-template-columns: minmax(0, 1fr);
+        gap: 16px;
+        max-width: 390px;
     }
 
     .app-card {
         width: 100%;
-        max-width: 360px;
+        min-height: 175px;
+        padding: 25px 20px;
+        border-radius: 20px;
+    }
+
+    .app-card h2 {
+        font-size: 23px;
+    }
+
+    .app-card > p {
+        font-size: 15px;
+    }
+
+    .card-action {
+        margin-top: 17px;
+    }
+
+    .page-footer {
+        margin-top: 28px;
+    }
+}
+
+/* Respect accessibility preferences */
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
     }
 }

@@ -3,29 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#f4f7f5">
     <title>Mini Apps</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+    <header class="page-header">
+        <h1>Mini Apps</h1>
+        <p>Choose an app to get started</p>
+    </header>
 
-    <h1>Mini Apps</h1>
+    <main class="apps" aria-label="Available applications">
 
-    <p>Choose an app to get started</p>
-
-    <div class="apps">
-
-       <a href="MINI-GAME/index.html" class="app-card">
+        <a href="MINI-GAME/index.html" class="app-card">
             <h2>🎯 Number Guessing Game</h2>
             <p>Try to guess the hidden number!</p>
+            <span class="card-action">Play game <span aria-hidden="true">↗</span></span>
         </a>
 
         <a href="expense-tracker/index.html" class="app-card">
             <h2>💰 Expense Tracker</h2>
             <p>Track and manage your expenses.</p>
+            <span class="card-action">Manage expenses <span aria-hidden="true">↗</span></span>
         </a>
 
-    </div>
+        <a href="http://localhost:3000" class="app-card portfolio-card"
+           target="_blank" rel="noopener noreferrer">
+            <h2><span class="jax-mark">JAX<span class="jax-star">*</span></span> Portfolio</h2>
+            <p>Explore my interactive developer portfolio.</p>
+            <span class="card-action">Explore portfolio <span aria-hidden="true">↗</span></span>
+        </a>
 
+    </main>
+
+    <footer class="page-footer">
+        <p>Small projects. Big ideas.</p>
+    </footer>
 </body>
 </html>
